@@ -18,11 +18,9 @@ const services = [
 const router = new Router();
 
 function fortune(ctx, body = null, status = 200) {
-    console.log("запрос пришол");
-
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            if (Math.random() > 0) { //0.25
+            if (Math.random() > 0.25) {
                 ctx.response.status = status;
                 ctx.response.body = body;
                 ctx.response.set({
