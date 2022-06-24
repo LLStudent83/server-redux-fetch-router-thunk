@@ -24,8 +24,11 @@ function fortune(ctx, body = null, status = 200) {
                 ctx.response.status = status;
                 ctx.response.body = body;
                 ctx.response.set({
+                    'Access-Control-Allow-Credentials': true,
                     'Access-Control-Allow-Origin': '*',
-                  });
+                    'Access-Control-Allow-Private-Network': true,
+                });
+                ctx.type = 'application/json; charset=utf-8';
                 resolve();
                 return;
             }
